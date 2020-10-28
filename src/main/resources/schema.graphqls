@@ -1,16 +1,42 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Person {
+    id: ID!
+    firstName: String!
+    middleName: String
+    lastName: String!
+    age: Int!
+}
+
 type Query {
-    bookById(id: ID): Book
+    person(id: ID!): Person
+    allPeople: [Person]
 }
 
-type Book {
-    id: ID
-    name: String
-    pageCount: Int
-    author: Author
+type Mutation {
+    createPerson(input: CreatePersonInput!) : Person!
+    deletePerson(id: ID!) : Boolean
+    updateName(input: UpdateNameInput!) : Person!
+    updateAge(input: UpdateAgeInput!) : Person!
 }
 
-type Author {
-    id: ID
+input CreatePersonInput {
+    firstName: String!
+    middleName: String
+    lastName: String!
+}
+
+input UpdateNameInput{
+    id: ID!
     firstName: String
+    middleName: String
     lastName: String
+}
+
+input UpdateAgeInput{
+    id: ID!
+    age: Int!
 }
