@@ -1,12 +1,7 @@
 package cz.danes.mujgraphql.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Person")
@@ -19,6 +14,10 @@ public class Person {
     private String middleName;
     private String lastName;
     private int age;
+
+    @OneToOne( cascade = CascadeType.ALL,optional = false)  //fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "personInfo_id") // v tabulce address je vytvoren sloupec user_id kterym se napojuje user
+    private PersonInfo personInfo;
 
 
     @Column(name = "id")
