@@ -6,11 +6,16 @@ import java.io.Serializable;
 @Entity
 @Table(name = "personinfo")
 public class PersonInfo  implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(mappedBy = "personinfo")
+    @Column
+    private String personInfo;
+
+    @OneToOne( cascade = CascadeType.ALL,optional = false)  //fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "person_id")
     private Person person;
 
     public PersonInfo() {
@@ -28,15 +33,27 @@ public class PersonInfo  implements Serializable {
         return person;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
     @Override
     public String toString() {
         return "PersonInfo{" +
                 "id=" + id +
+                ", personInfo='" + personInfo + '\'' +
                 ", person=" + person +
                 '}';
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public String getPersonInfo() {
+        return personInfo;
+    }
+    public String getPersonInfo(int id) {
+        return personInfo;
+    }
+
+    public void setPersonInfo(String personInfo) {
+        this.personInfo = personInfo;
     }
 }

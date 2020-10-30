@@ -9,11 +9,20 @@ type Person {
     middleName: String
     lastName: String!
     age: Int!
+    personInfo:personInfo!
+}
+
+type  personInfo {
+    id: ID!
+    personInfo:String!
+    person:Person!
 }
 
 type Query {
     person(id: ID!): Person
+#   personInfo(id: ID!): PersonInfo
     allPeople: [Person]
+#    allPersonInfo: [PersonInfo]
 }
 
 type Mutation {

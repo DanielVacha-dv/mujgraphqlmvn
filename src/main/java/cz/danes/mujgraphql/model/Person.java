@@ -2,10 +2,11 @@ package cz.danes.mujgraphql.model;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "Person")
-public class Person {
+@Table(name = "person")
+public class Person  implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -15,8 +16,7 @@ public class Person {
     private String lastName;
     private int age;
 
-    @OneToOne( cascade = CascadeType.ALL,optional = false)  //fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "personInfo_id") // v tabulce address je vytvoren sloupec user_id kterym se napojuje user
+    @OneToOne(mappedBy = "person")// v tabulce address je vytvoren sloupec user_id kterym se napojuje user
     private PersonInfo personInfo;
 
 
@@ -55,6 +55,19 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public PersonInfo getPersonInfo() {
+        return personInfo;
+    }
+
+    public PersonInfo getPersonInfo(int id) {
+        return personInfo;
+    }
+
+    public void setPersonInfo(PersonInfo personInfo) {
+        this.personInfo = personInfo;
+    }
+
 
     @Column
     public int getAge() {
