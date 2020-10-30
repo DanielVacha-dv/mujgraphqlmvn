@@ -20,9 +20,9 @@ type  personInfo {
 
 type Query {
     person(id: ID!): Person
-#   personInfo(id: ID!): PersonInfo
+#    personInfo(id: ID!): personInfo
     allPeople: [Person]
-#    allPersonInfo: [PersonInfo]
+    allPersonInfo: [personInfo]
 }
 
 type Mutation {
