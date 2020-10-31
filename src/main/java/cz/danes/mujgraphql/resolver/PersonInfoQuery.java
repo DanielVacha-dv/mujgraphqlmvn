@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class PersonInfoQuery implements GraphQLQueryResolver {
+
     private final PersonInfoRepository repo;
 
 

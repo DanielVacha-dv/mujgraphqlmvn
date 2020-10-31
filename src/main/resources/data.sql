@@ -4,8 +4,8 @@ INSERT INTO PERSON (FIRST_NAME, MIDDLE_NAME, LAST_NAME, AGE) VALUES
     ('Steve', 'Trmos', 'Jones',16),
     ('Tom', 'Junior', 'Richards',67);
 
-INSERT INTO PersonInfo (id, person_Info, person_id) VALUES
-        (1, 'je to prdolik',1),
-        (2, 'Rad si kuka',2),
-        (3, 'teprve 16',3),
-        (4, 'strsi junior',4);
+INSERT INTO PersonInfo (id, person_InfoS,suma,nationallity, person_id) VALUES
+        (1, 'je to prdolik',5,'cz',1),
+        (2, 'Rad si kuka',2,'es',2),
+        (3, 'teprve 16',2,'cz',3),
+        (4, 'strsi junior',6,'uk',4);

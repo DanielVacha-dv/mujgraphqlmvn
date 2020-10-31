@@ -14,13 +14,14 @@ type Person {
 
 type  personInfo {
     id: ID!
-    personInfo:String!
+    personInfoS:String!
+    suma : Int
+    nationallity : String
     person:Person!
 }
 
 type Query {
     person(id: ID!): Person
-#    personInfo(id: ID!): personInfo
     allPeople: [Person]
     allPersonInfo: [personInfo]
 }

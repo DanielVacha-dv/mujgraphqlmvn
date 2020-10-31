@@ -5,20 +5,32 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "personinfo")
-public class PersonInfo  implements Serializable {
+public class PersonInfo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String personInfo;
+    private String personInfoS;
 
-    @OneToOne( cascade = CascadeType.ALL,optional = false)  //fetch = FetchType.LAZY, optional = false)
+    @Column(name ="nationallity" )
+    private String nationallity;
+
+    @Column(name ="suma" )
+    private int suma;
+
+    @OneToOne(cascade = CascadeType.ALL, optional = false)  //fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "person_id")
     private Person person;
 
-    public PersonInfo() {
+
+    public int getSuma() {
+        return suma;
+    }
+
+    public void setSuma(int suma) {
+        this.suma = suma;
     }
 
     public Long getId() {
@@ -33,27 +45,37 @@ public class PersonInfo  implements Serializable {
         return person;
     }
 
-    @Override
-    public String toString() {
-        return "PersonInfo{" +
-                "id=" + id +
-                ", personInfo='" + personInfo + '\'' +
-                ", person=" + person +
-                '}';
-    }
-
     public void setPerson(Person person) {
         this.person = person;
     }
 
-    public String getPersonInfo() {
-        return personInfo;
-    }
-    public String getPersonInfo(int id) {
-        return personInfo;
+    public String getPersonInfoS() {
+        return personInfoS;
     }
 
-    public void setPersonInfo(String personInfo) {
-        this.personInfo = personInfo;
+    public String getPersonInfoS(int id) {
+        return personInfoS;
+    }
+
+    public void setPersonInfo(String personInfoS) {
+        this.personInfoS = personInfoS;
+    }
+
+    public String getNationallity() {
+        return nationallity;
+    }
+
+    public void setNationallity(String nationallity) {
+        this.nationallity = nationallity;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonInfo{" +
+                "id=" + id +
+                ", personInfo='" + personInfoS + '\'' +
+                ", person=" + person +
+                ", suma=" + suma +
+                '}';
     }
 }
