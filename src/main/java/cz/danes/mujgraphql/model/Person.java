@@ -16,7 +16,7 @@ public class Person  implements Serializable {
     private String lastName;
     private int age;
 
-    @OneToOne(mappedBy = "person")// v tabulce address je vytvoren sloupec user_id kterym se napojuje user
+    @OneToOne(mappedBy = "person")
     private PersonInfo personInfo;
 
 

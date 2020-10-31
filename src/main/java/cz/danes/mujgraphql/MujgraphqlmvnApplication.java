@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 
 @SpringBootApplication
-@EntityScan(basePackages = "cz.danes.mujgraphql.model")
+@EntityScan(basePackages = "cz.danes.mujgraphql")
 public class MujgraphqlmvnApplication {
 
 	public static void main(String[] args) {
