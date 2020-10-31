@@ -9,3 +9,9 @@ INSERT INTO PersonInfo (id, person_InfoS,suma,nationallity, person_id) VALUES
         (2, 'Rad si kuka',2,'es',2),
         (3, 'teprve 16',2,'cz',3),
         (4, 'strsi junior',6,'uk',4);
+
+insert into post (title, id) values
+   ('First post', 1);
+
+insert into post_comment (review, id) values
+    ('My first review', 2)
