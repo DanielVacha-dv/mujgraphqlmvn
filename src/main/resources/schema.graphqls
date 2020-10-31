@@ -20,7 +20,20 @@ type  personInfo {
     person:Person!
 }
 
+type Post {
+    id:ID!
+    title: String!
+    comments : [PostComment]
+}
+
+type  PostComment {
+    id:ID!
+    review: String
+}
+
 type Query {
+#    allPost:[Post]
+    post(id:ID!): Post
     person(id: ID!): Person
     allPeople: [Person]
     allPersonInfo: [personInfo]
@@ -50,3 +63,11 @@ input UpdateAgeInput{
     id: ID!
     age: Int!
 }
+
+#{
+#    post (id: 1){
+#        id,
+#        title,
+#
+#    }
+#}

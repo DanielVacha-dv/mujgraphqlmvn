@@ -13,7 +13,9 @@ INSERT INTO PersonInfo (id, person_InfoS,suma,nationallity, person_id) VALUES
 insert into post (id,title) values
    (1, 'First post'),
    (2,'second post');
---
---insert into postcomment (id, review) values
---    (1,'My first review'),
---    (2 'My second review');
+
+insert into postcomment (id, review, post_id) values
+    (1,'My first review',1),
+    (2,'My first second review',1),
+    (3,'My second first review',2),
+    (4, 'My second second review',2);
