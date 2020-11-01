@@ -22,14 +22,12 @@ public class PostQuerry implements GraphQLQueryResolver {
 
     @Autowired
     private final PostRepository repo;
+    @Autowired
     private final PostCommentRepository repoComment;
 
     public Post post(Long id) {
-        PostComment postComment = repoComment.findById(id).get();
+//        List<PostComment> allById = repoComment.getAllById(id);
         Post post = repo.findById(id).get();
-        List<PostComment> listPostComment=new ArrayList<>();
-        listPostComment.add(postComment);
-        post.setComments(listPostComment);
         return post;
     }
 

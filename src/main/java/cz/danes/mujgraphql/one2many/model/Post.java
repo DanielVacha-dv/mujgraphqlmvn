@@ -18,7 +18,8 @@ public class Post  implements Serializable {
 
     private String title;
 
-    @OneToMany(mappedBy="post" ,cascade = CascadeType.ALL)
+    // Eager nute pro graphql funkce kdyz chci videt many prvky
+    @OneToMany(mappedBy="post" ,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<PostComment> comments = new ArrayList<>();
 
 

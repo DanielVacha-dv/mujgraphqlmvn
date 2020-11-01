@@ -17,5 +17,7 @@ insert into post (id,title) values
 insert into postcomment (id, review, post_id) values
     (1,'My first review',1),
     (2,'My first second review',1),
-    (3,'My second first review',2),
-    (4, 'My second second review',2);
+    (3,'My first third review',1),
+    (4,'My second first review',2),
+    (5,'My second third review',2),
+    (6, 'My second second review',2);

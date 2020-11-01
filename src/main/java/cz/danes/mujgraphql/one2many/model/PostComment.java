@@ -17,7 +17,7 @@ public class PostComment  implements Serializable {
 
     private String review;
 
-    @ManyToOne//(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)//,fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Post post;
@@ -40,6 +40,9 @@ public class PostComment  implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    public long getPostId() {
+        return post.getId();
+    }
 
     public String getReview() {
         return review;
@@ -48,6 +51,5 @@ public class PostComment  implements Serializable {
     public void setReview(String review) {
         this.review = review;
     }
-
 
 }

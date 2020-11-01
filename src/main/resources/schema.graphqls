@@ -64,10 +64,24 @@ input UpdateAgeInput{
     age: Int!
 }
 
+
+#https://github.com/SuperEvenSteven/spring-boot-graphql-example
+#{
+#    person (id: 3){
+#        id,
+#        firstName,
+#        middleName,
+#        lastName
+#    }
+#}
+
+
 #{
 #    post (id: 1){
 #        id,
 #        title,
-#
+#        comments {
+#            review
+#        }
 #    }
 #}
