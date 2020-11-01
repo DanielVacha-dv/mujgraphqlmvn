@@ -36,7 +36,20 @@ type Query {
     post(id:ID!): Post
     person(id: ID!): Person
     allPeople: [Person]
+    allPostMany: [PostMany]
     allPersonInfo: [personInfo]
+}
+
+#{ allPostMany {
+#    id,
+#    title
+#}
+#}
+
+
+type  PostMany {
+    id: ID!
+    title : String!
 }
 
 type Mutation {

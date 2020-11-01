@@ -21,3 +21,15 @@ insert into postcomment (id, review, post_id) values
     (4,'My second first review',2),
     (5,'My second third review',2),
     (6, 'My second second review',2);
+
+insert into post_many (id, title) values
+        (1,'Titulek prvni'),
+        (2,'Titulek 2');
+
+insert into tag (id, name) values
+                (1,'Tag 1 jmeno'),
+                (2,'Tag 2 jmeno');
+
+insert into post_tag (post_id, tag_id) values
+                (1,1),
+                (2,2);
