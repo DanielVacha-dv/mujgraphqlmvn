@@ -1,3 +1,4 @@
+#http://localhost:8080/graphql
 schema {
     query: Query
     mutation: Mutation
@@ -34,22 +35,49 @@ type  PostComment {
 type Query {
 #    allPost:[Post]
     post(id:ID!): Post
+
+#{ post(id: 1) {
+#    id,
+#    title
+#    comments {
+#        id
+#        review
+#    }
+#}
+#}
     person(id: ID!): Person
     allPeople: [Person]
-    allPostMany: [PostMany]
+    allCommentMany: [Comment]
+
+    commentMany(id: ID!):Comment
+#    getTagByComment(comment : Comment):[Tag]
+    allTagMany: [Tag]
+    tagMany(id: ID!): Tag
     allPersonInfo: [personInfo]
 }
 
-#{ allPostMany {
-#    id,
-#    title
+
+
+#{ commentMany (id: 1) {
+#    id ,
+#    title,
+#    # tag {
+#    #   id,
+#    #   name
+#    # }
 #}
 #}
 
-
-type  PostMany {
+type  Comment {
     id: ID!
     title : String!
+    tag: [Tag!]!
+}
+
+type  Tag {
+    id: ID!
+    name: String!
+    posts : [Comment]!
 }
 
 type Mutation {

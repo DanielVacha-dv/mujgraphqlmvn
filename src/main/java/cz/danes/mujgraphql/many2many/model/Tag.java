@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Entity(name = "Tag")
+@Entity
 @Table(name = "tag")
 public class Tag {
     @Id
@@ -17,8 +17,8 @@ public class Tag {
     @NaturalId
     private String name;
 
-    @ManyToMany(mappedBy = "tags")
-    private List<PostMany> posts = new ArrayList<>();
+    @ManyToMany(mappedBy = "tags",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Comment> posts = new ArrayList<>();
 
     public Tag() {}
 
@@ -42,11 +42,11 @@ public class Tag {
         this.name = name;
     }
 
-    public List<PostMany> getPosts() {
+    public List<Comment> getPostMany() {
         return posts;
     }
 
-    public void setPosts(List<PostMany> posts) {
+    public void setPosts(List<Comment> posts) {
         this.posts = posts;
     }
 //Getters and setters ommitted for brevity

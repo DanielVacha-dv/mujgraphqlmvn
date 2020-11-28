@@ -22,8 +22,8 @@ public class PostQuerry implements GraphQLQueryResolver {
 
     @Autowired
     private final PostRepository repo;
-    @Autowired
-    private final PostCommentRepository repoComment;
+//    @Autowired
+//    private final PostCommentRepository repoComment;
 
     public Post post(Long id) {
 //        List<PostComment> allById = repoComment.getAllById(id);

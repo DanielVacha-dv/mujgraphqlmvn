@@ -22,14 +22,17 @@ insert into postcomment (id, review, post_id) values
     (5,'My second third review',2),
     (6, 'My second second review',2);
 
-insert into post_many (id, title) values
+insert into comment_many (id, title) values
         (1,'Titulek prvni'),
-        (2,'Titulek 2');
+        (2,'Titulek druhy ');
 
 insert into tag (id, name) values
                 (1,'Tag 1 jmeno'),
-                (2,'Tag 2 jmeno');
+                (2,'Tag 2 jmeno'),
+                (3,'Tag 3 jmeno');
 
-insert into post_tag (post_id, tag_id) values
+insert into comment_tag (comment_id, tag_id) values
                 (1,1),
-                (2,2);
+                (1,2),
+                (2,2),
+                (2,3);

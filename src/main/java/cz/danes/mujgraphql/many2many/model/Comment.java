@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "PostMany")
-public class PostMany {
+@Table(name = "CommentMany")
+public class Comment {
 
     @Id
     @GeneratedValue
@@ -14,9 +14,9 @@ public class PostMany {
 
     private String title;
 
-    public PostMany() {}
+    public Comment() {}
 
-    public PostMany(String title) {
+    public Comment(String title) {
         this.title = title;
     }
 
@@ -48,28 +48,31 @@ public class PostMany {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
-    @JoinTable(name = "post_tag",
-            joinColumns = @JoinColumn(name = "post_id"),
+    @JoinTable(name = "comment_tag",
+            joinColumns = @JoinColumn(name = "comment_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
     private List<Tag> tags = new ArrayList<>();
 
+    public List<Tag> getTag() {
+        return tags;
+    }
 
     public void addTag(Tag tag) {
         tags.add(tag);
-        tag.getPosts().add(this);
+        tag.getPostMany().add(this);
     }
 
     public void removeTag(Tag tag) {
         tags.remove(tag);
-        tag.getPosts().remove(this);
+        tag.getPostMany().remove(this);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PostMany)) return false;
-        return id != null && id.equals(((PostMany) o).getId());
+        if (!(o instanceof Comment)) return false;
+        return id != null && id.equals(((Comment) o).getId());
     }
 
     @Override
