@@ -22,6 +22,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class PersonMutator implements GraphQLMutationResolver {
 
+
     private final PersonRepository repo;
 
     public Person createPerson(CreatePersonInput i) {

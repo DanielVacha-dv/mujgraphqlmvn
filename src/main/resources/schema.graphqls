@@ -85,6 +85,10 @@ type Mutation {
     deletePerson(id: ID!) : Boolean
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
+    createPost(input: CreatePostInput): Post!
+}
+input CreatePostInput {
+    title: String!
 }
 
 input CreatePersonInput {

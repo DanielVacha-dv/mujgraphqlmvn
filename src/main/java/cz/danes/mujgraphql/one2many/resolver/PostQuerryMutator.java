@@ -1,4 +1,21 @@
 package cz.danes.mujgraphql.one2many.resolver;
 
-public class PostQuerryMutator {
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import cz.danes.mujgraphql.inputs.CreatePostInput;
+import cz.danes.mujgraphql.one2many.model.Post;
+import cz.danes.mujgraphql.one2many.repo.PostRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Component
+@AllArgsConstructor
+public class PostQuerryMutator implements GraphQLMutationResolver {
+
+    private PostRepository repo;
+
+    public Post CreatePostInput(CreatePostInput i) {
+        Post p = new Post();
+        p.setTitle(i.getTitle());
+        return repo.save(p);
+    }
 }
