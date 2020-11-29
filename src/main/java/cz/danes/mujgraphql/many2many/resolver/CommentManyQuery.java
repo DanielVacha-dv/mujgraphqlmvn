@@ -17,8 +17,7 @@ public class CommentManyQuery implements GraphQLQueryResolver {
     private final CommentRepo repo ;
 
     public Comment commentMany(Long id) {
-        Optional<Comment> byId = repo.findById(id);
-        return byId.get();
+        return repo.findById(id).get();
     }
 
     public Iterable<Comment> allCommentMany() {
