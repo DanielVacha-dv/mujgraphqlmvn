@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class CommentManyQuery implements GraphQLQueryResolver {
@@ -14,7 +16,12 @@ public class CommentManyQuery implements GraphQLQueryResolver {
     @Autowired
     private final CommentRepo repo ;
 
-    public Comment commentMany(Long id) { return repo.findById(id).get();}
+    public Comment commentMany(Long id) {
+        Optional<Comment> byId = repo.findById(id);
+        return byId.get();
+    }
 
-    public Iterable<Comment> allCommentMany() {  return repo.findAll(); }
+    public Iterable<Comment> allCommentMany() {
+        return repo.findAll();
+    }
 }

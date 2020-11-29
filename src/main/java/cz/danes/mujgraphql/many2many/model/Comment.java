@@ -47,7 +47,8 @@ public class Comment {
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
-    })
+
+    },  fetch = FetchType.EAGER)
     @JoinTable(name = "comment_tag",
             joinColumns = @JoinColumn(name = "comment_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")

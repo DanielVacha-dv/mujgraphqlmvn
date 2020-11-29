@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +20,7 @@ public class TagManyQuery  implements GraphQLQueryResolver {
 
     @Autowired
     private final TagRepo repo;
+    private Long l= Long.valueOf(1);
 
     public Tag tagMany(Long id) { return  repo.findById(id).get();}
 
@@ -25,6 +28,6 @@ public class TagManyQuery  implements GraphQLQueryResolver {
 
     public Iterable<Tag> getTagByComment(Comment c) {
         List<Long> collect = c.getTags().stream().map(Tag::getId).collect(Collectors.toList());
-        return  repo.findAllById(collect);
+        return  repo.findAllById( collect );
     }
 }
