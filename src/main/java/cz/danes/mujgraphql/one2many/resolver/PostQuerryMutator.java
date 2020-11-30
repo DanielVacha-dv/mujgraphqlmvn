@@ -5,6 +5,7 @@ import cz.danes.mujgraphql.inputs.CreatePostInput;
 import cz.danes.mujgraphql.one2many.model.Post;
 import cz.danes.mujgraphql.one2many.repo.PostRepository;
 import lombok.AllArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,7 +14,7 @@ public class PostQuerryMutator implements GraphQLMutationResolver {
 
     private PostRepository repo;
 
-    public Post CreatePostInput(CreatePostInput i) {
+    public Post createPostInput( CreatePostInput i) {
         Post p = new Post();
         p.setTitle(i.getTitle());
         return repo.save(p);

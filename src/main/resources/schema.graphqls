@@ -81,15 +81,38 @@ type  Tag {
 }
 
 type Mutation {
+
     createPerson(input: CreatePersonInput!) : Person!
     deletePerson(id: ID!) : Boolean
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
-    createPost(input: CreatePostInput): Post!
+    createPost(input: CreatePostInput!) : Post!
 }
+
+#type Mutation {
+#    createPost(input: CreatePostInput!) : Post!
+#}
+
+#mutation createPost($input: CreatePostInput!) {
+#    createPost(input: $input) {
+#        title
+#    }
+#}
+#{ # query variables
+#"input": {
+#"title": "Timicek"
+#}
+#}
+
+
 input CreatePostInput {
     title: String!
+#    comments: CreatePostCommentInput
 }
+
+#input CreatePostCommentInput {
+#    review: String
+#}
 
 input CreatePersonInput {
     firstName: String!
