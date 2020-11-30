@@ -11,8 +11,8 @@ import java.util.Optional;
 @Repository
 public interface PostRepository extends CrudRepository<Post, Long> {
 
-    public default List<PostComment> getAllPostComment(Long id) {
-        final Post post = findById(id).get();
-        return post.getComments();
-    }
+//    public default List<PostComment> getAllPostComment(Long id) {
+//        final Post post = findById(id).get();
+//        return post.getComments();
+//    }
 }

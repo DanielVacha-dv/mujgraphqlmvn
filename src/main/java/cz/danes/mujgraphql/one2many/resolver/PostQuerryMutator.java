@@ -14,7 +14,7 @@ public class PostQuerryMutator implements GraphQLMutationResolver {
 
     private PostRepository repo;
 
-    public Post createPostInput( CreatePostInput i) {
+    public Post makePost( CreatePostInput i) {
         Post p = new Post();
         p.setTitle(i.getTitle());
         return repo.save(p);

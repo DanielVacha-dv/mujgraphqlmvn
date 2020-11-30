@@ -86,7 +86,7 @@ type Mutation {
     deletePerson(id: ID!) : Boolean
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
-    createPost(input: CreatePostInput!) : Post!
+    makePost(input: CreatePostInput!) : Post!
 }
 
 #type Mutation {
