@@ -81,14 +81,17 @@ type  Tag {
 }
 
 type Mutation {
-
     createPerson(input: CreatePersonInput!) : Person!
     deletePerson(id: ID!) : Boolean
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
     makePost(input: CreatePostInput!) : Post!
+    makeCommentM2M(input: CreateCommentM2M!) :Comment!
 }
 
+input CreateCommentM2M {
+    title: String!
+}
 #type Mutation {
 #    createPost(input: CreatePostInput!) : Post!
 #}
