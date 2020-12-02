@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "CommentMany")
-public class Comment {
+public class CommentMany {
 
     @Id
     @GeneratedValue
@@ -14,9 +14,9 @@ public class Comment {
 
     private String title;
 
-    public Comment() {}
+    public CommentMany() {}
 
-    public Comment(String title) {
+    public CommentMany(String title) {
         this.title = title;
     }
 
@@ -72,8 +72,8 @@ public class Comment {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Comment)) return false;
-        return id != null && id.equals(((Comment) o).getId());
+        if (!(o instanceof CommentMany)) return false;
+        return id != null && id.equals(((CommentMany) o).getId());
     }
 
     @Override

@@ -1,6 +1,4 @@
 package cz.danes.mujgraphql.inputs;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +6,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreatePostCommentInput {
-    private String review;
+public class CreateCommentM2M {
+    private String title;
 }

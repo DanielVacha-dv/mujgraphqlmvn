@@ -18,7 +18,7 @@ public class Tag {
     private String name;
 
     @ManyToMany(mappedBy = "tags",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Comment> posts = new ArrayList<>();
+    private List<CommentMany> posts = new ArrayList<>();
 
     public Tag() {}
 
@@ -42,11 +42,11 @@ public class Tag {
         this.name = name;
     }
 
-    public List<Comment> getPostMany() {
+    public List<CommentMany> getPostMany() {
         return posts;
     }
 
-    public void setPosts(List<Comment> posts) {
+    public void setPosts(List<CommentMany> posts) {
         this.posts = posts;
     }
 //Getters and setters ommitted for brevity

@@ -47,9 +47,9 @@ type Query {
 #}
     person(id: ID!): Person
     allPeople: [Person]
-    allCommentMany: [Comment]
+    allCommentMany: [CommentMany]
 
-    commentMany(id: ID!):Comment
+    commentMany(id: ID!):CommentMany
 #    getTagByComment(comment : Comment):[Tag]
     allTagMany: [Tag]
     tagMany(id: ID!): Tag
@@ -68,7 +68,7 @@ type Query {
 #}
 #}
 
-type  Comment {
+type  CommentMany {
     id: ID!
     title : String!
     tag: [Tag!]!
@@ -77,7 +77,7 @@ type  Comment {
 type  Tag {
     id: ID!
     name: String!
-    posts : [Comment]!
+    posts : [CommentMany]!
 }
 
 type Mutation {
@@ -86,7 +86,7 @@ type Mutation {
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
     makePost(input: CreatePostInput!) : Post!
-    makeCommentM2M(input: CreateCommentM2M!) :Comment!
+    makeCommentM2M(input: CreateCommentM2M!) :CommentMany!
 }
 
 input CreateCommentM2M {
