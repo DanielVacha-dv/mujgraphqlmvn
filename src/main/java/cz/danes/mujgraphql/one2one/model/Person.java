@@ -1,4 +1,4 @@
-package cz.danes.mujgraphql.model;
+package cz.danes.mujgraphql.one2one.model;
 
 
 import javax.persistence.*;

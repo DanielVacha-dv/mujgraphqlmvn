@@ -1,9 +1,8 @@
-package cz.danes.mujgraphql.resolver;
+package cz.danes.mujgraphql.one2one.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import cz.danes.mujgraphql.model.Person;
-import cz.danes.mujgraphql.model.PersonInfo;
-import cz.danes.mujgraphql.repositories.PersonInfoRepository;
+import cz.danes.mujgraphql.one2one.model.PersonInfo;
+import cz.danes.mujgraphql.one2one.repositories.PersonInfoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

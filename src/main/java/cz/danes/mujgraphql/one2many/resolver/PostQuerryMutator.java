@@ -1,11 +1,10 @@
 package cz.danes.mujgraphql.one2many.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-import cz.danes.mujgraphql.inputs.CreatePostInput;
+import cz.danes.mujgraphql.one2many.inputs.CreatePostInput;
 import cz.danes.mujgraphql.one2many.model.Post;
 import cz.danes.mujgraphql.one2many.repo.PostRepository;
 import lombok.AllArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 @Component

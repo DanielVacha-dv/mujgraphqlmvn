@@ -1,0 +1,43 @@
+type  CommentMany {
+    id: ID!
+    title : String!
+    tag: [Tag!]!
+}
+#{ commentMany (id: 1) {
+#    id ,
+#    title,
+#    # tag {
+#    #   id,
+#    #   name
+#    # }
+#}
+#}
+
+type  Tag {
+    id: ID!
+    name: String!
+    posts : [CommentMany]!
+}
+
+
+
+input CreateCommentM2M {
+    title: String!
+}
+
+#{ allCommentMany {
+#    id,
+#    title
+#}
+#}
+
+#mutation makePost($input: CreatePostInput!) {
+#    makePost(input: $input) {
+#        title
+#    }
+#}
+#{
+#"input": {
+#"title": "Timicek"
+#}
+#}

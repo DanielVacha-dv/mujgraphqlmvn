@@ -1,0 +1,34 @@
+type Person {
+    id: ID!
+    firstName: String!
+    middleName: String
+    lastName: String!
+    age: Int!
+    personInfo:personInfo!
+}
+
+type  personInfo {
+    id: ID!
+    personInfoS:String!
+    suma : Int
+    nationallity : String
+    person:Person!
+}
+
+input CreatePersonInput {
+    firstName: String!
+    middleName: String
+    lastName: String!
+}
+
+input UpdateNameInput{
+    id: ID!
+    firstName: String
+    middleName: String
+    lastName: String
+}
+
+input UpdateAgeInput{
+    id: ID!
+    age: Int!
+}

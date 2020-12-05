@@ -1,4 +1,4 @@
-package cz.danes.mujgraphql.inputs;
+package cz.danes.mujgraphql.one2many.inputs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UpdateAgeInput {
-    private long id;
-    private int age;
-
+public class CreatePostInput {
+    private String title;
 }

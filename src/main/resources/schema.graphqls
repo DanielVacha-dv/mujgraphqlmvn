@@ -4,135 +4,37 @@ schema {
     mutation: Mutation
 }
 
-type Person {
-    id: ID!
-    firstName: String!
-    middleName: String
-    lastName: String!
-    age: Int!
-    personInfo:personInfo!
-}
 
-type  personInfo {
-    id: ID!
-    personInfoS:String!
-    suma : Int
-    nationallity : String
-    person:Person!
-}
-
-type Post {
-    id:ID!
-    title: String!
-    comments : [PostComment]
-}
-
-type  PostComment {
-    id:ID!
-    review: String
-}
 
 type Query {
-#    allPost:[Post]
-    post(id:ID!): Post
-
-#{ post(id: 1) {
-#    id,
-#    title
-#    comments {
-#        id
-#        review
-#    }
-#}
-#}
     person(id: ID!): Person
     allPeople: [Person]
+    allPersonInfo: [personInfo]
+#m2m
     allCommentMany: [CommentMany]
-
     commentMany(id: ID!):CommentMany
-#    getTagByComment(comment : Comment):[Tag]
     allTagMany: [Tag]
     tagMany(id: ID!): Tag
-    allPersonInfo: [personInfo]
+#o2m
+    allPostek: [Post]
+    post(id:ID!): Post
+
 }
 
 
 
-#{ commentMany (id: 1) {
-#    id ,
-#    title,
-#    # tag {
-#    #   id,
-#    #   name
-#    # }
-#}
-#}
 
-type  CommentMany {
-    id: ID!
-    title : String!
-    tag: [Tag!]!
-}
-
-type  Tag {
-    id: ID!
-    name: String!
-    posts : [CommentMany]!
-}
 
 type Mutation {
+#    o2o
     createPerson(input: CreatePersonInput!) : Person!
     deletePerson(id: ID!) : Boolean
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
+#   M2M
+    makeCommentM2M(input: CreateCommentM2M!) : CommentMany!
+#    O2M
     makePost(input: CreatePostInput!) : Post!
-    makeCommentM2M(input: CreateCommentM2M!) :CommentMany!
-}
-
-input CreateCommentM2M {
-    title: String!
-}
-#type Mutation {
-#    createPost(input: CreatePostInput!) : Post!
-#}
-
-#mutation createPost($input: CreatePostInput!) {
-#    createPost(input: $input) {
-#        title
-#    }
-#}
-#{ # query variables
-#"input": {
-#"title": "Timicek"
-#}
-#}
-
-
-input CreatePostInput {
-    title: String!
-#    comments: CreatePostCommentInput
-}
-
-#input CreatePostCommentInput {
-#    review: String
-#}
-
-input CreatePersonInput {
-    firstName: String!
-    middleName: String
-    lastName: String!
-}
-
-input UpdateNameInput{
-    id: ID!
-    firstName: String
-    middleName: String
-    lastName: String
-}
-
-input UpdateAgeInput{
-    id: ID!
-    age: Int!
 }
 
 
@@ -147,12 +49,3 @@ input UpdateAgeInput{
 #}
 
 
-#{
-#    post (id: 1){
-#        id,
-#        title,
-#        comments {
-#            review
-#        }
-#    }
-#}

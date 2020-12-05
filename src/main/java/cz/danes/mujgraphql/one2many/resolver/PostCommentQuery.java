@@ -1,7 +1,6 @@
 package cz.danes.mujgraphql.one2many.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import cz.danes.mujgraphql.model.Person;
 import cz.danes.mujgraphql.one2many.model.PostComment;
 import cz.danes.mujgraphql.one2many.repo.PostCommentRepository;
 import lombok.RequiredArgsConstructor;

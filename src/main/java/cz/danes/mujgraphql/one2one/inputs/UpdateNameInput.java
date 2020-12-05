@@ -1,4 +1,4 @@
-package cz.danes.mujgraphql.inputs;
+package cz.danes.mujgraphql.one2one.inputs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

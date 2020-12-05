@@ -1,4 +1,4 @@
-package cz.danes.mujgraphql.resolver;
+package cz.danes.mujgraphql.one2one.resolver;
 
 
 import java.util.Optional;
@@ -6,11 +6,11 @@ import java.util.Optional;
 
 import cz.danes.mujgraphql.exception.InvalidArgumentException;
 import cz.danes.mujgraphql.exception.PersonNotFoundException;
-import cz.danes.mujgraphql.inputs.CreatePersonInput;
-import cz.danes.mujgraphql.inputs.UpdateAgeInput;
-import cz.danes.mujgraphql.inputs.UpdateNameInput;
-import cz.danes.mujgraphql.model.Person;
-import cz.danes.mujgraphql.repositories.PersonRepository;
+import cz.danes.mujgraphql.one2one.inputs.CreatePersonInput;
+import cz.danes.mujgraphql.one2one.inputs.UpdateAgeInput;
+import cz.danes.mujgraphql.one2one.inputs.UpdateNameInput;
+import cz.danes.mujgraphql.one2one.model.Person;
+import cz.danes.mujgraphql.one2one.repositories.PersonRepository;
 import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
