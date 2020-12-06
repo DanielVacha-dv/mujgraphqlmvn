@@ -10,6 +10,8 @@ import cz.danes.mujgraphql.one2one.inputs.CreatePersonInput;
 import cz.danes.mujgraphql.one2one.inputs.UpdateAgeInput;
 import cz.danes.mujgraphql.one2one.inputs.UpdateNameInput;
 import cz.danes.mujgraphql.one2one.model.Person;
+import cz.danes.mujgraphql.one2one.model.PersonInfo;
+import cz.danes.mujgraphql.one2one.repositories.PersonInfoRepository;
 import cz.danes.mujgraphql.one2one.repositories.PersonRepository;
 import org.springframework.stereotype.Component;
 
@@ -24,13 +26,22 @@ public class PersonMutator implements GraphQLMutationResolver {
 
 
     private final PersonRepository repo;
+    private final PersonInfoRepository repPI;
 
     public Person createPerson(CreatePersonInput i) {
         Person p = new Person();
         p.setFirstName(i.getFirstName());
         p.setMiddleName(i.getMiddleName());
         p.setLastName(i.getLastName());
-        return repo.save(p);
+        PersonInfo pi=new PersonInfo();
+        pi.setSuma(1);
+        pi.setPersonInfo("informace");
+        p.setPersonInfo(pi);
+        pi.setPerson(p);
+
+        Person save = repo.save(p);
+        repPI.save(pi);
+        return  save;
     }
 
     public boolean deletePerson(Long id) {

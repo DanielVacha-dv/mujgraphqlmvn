@@ -13,6 +13,23 @@ type  PostComment {
 input CreatePostInput {
     title: String!
 }
+
+#input CreatePostCommentInput {
+#    title: String!
+#    review: String!
+#}
+#mutation makePost($input: CreatePostInput!) {
+#    makePost(input: $input) {
+#        title
+#    }
+#}
+#{
+#"input": {
+#"title": "Timicek"
+#}
+#}
+
+
 #{ post(id: 1) {
 #    id,
 #    title

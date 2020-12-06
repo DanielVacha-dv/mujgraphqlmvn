@@ -28,6 +28,7 @@ type Query {
 type Mutation {
 #    o2o
     createPerson(input: CreatePersonInput!) : Person!
+    makePersonPersonInfo(input1: CreatePersonInput!,input2: CreatePersonInfoInput!) : Person!
     deletePerson(id: ID!) : Boolean
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
@@ -35,6 +36,7 @@ type Mutation {
     makeCommentM2M(input: CreateCommentM2M!) : CommentMany!
 #    O2M
     makePost(input: CreatePostInput!) : Post!
+#    makePostComment(input: CreatePostCommentInput!) : Post!
 }
 
 

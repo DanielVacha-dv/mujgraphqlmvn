@@ -19,6 +19,14 @@ input CreatePersonInput {
     firstName: String!
     middleName: String
     lastName: String!
+#    personInfo:CreatePersonInfoInput
+}
+
+input   CreatePersonInfoInput {
+        personInfoS:String!
+        suma : Int
+        nationallity : String
+#    person: CreatePersonInput
 }
 
 input UpdateNameInput{
@@ -32,3 +40,38 @@ input UpdateAgeInput{
     id: ID!
     age: Int!
 }
+
+#mutation makePersonPersonInfo($input1: CreatePersonInput!,$input2: CreatePersonInfoInput!) {
+#    makePersonPersonInfo(input1: $input1,input2: $input2) {
+#        firstName
+#        middleName
+#        lastName
+#        age
+#    }
+#}
+#{
+#"input1": {
+#"firstName": "Timicek",
+#"lastName": "Komik",
+#"middleName": "stredo"
+#},
+#
+#"input2": {
+#"personInfoS": "personalne tajne",
+#"suma": 3 ,
+#"nationallity": "CZ"
+#}
+#}
+
+
+#{
+#    allPeople {
+#        id,
+#        firstName,
+#        lastName
+#        personInfo {
+#            personInfoS,
+#            suma
+#        }
+#    }
+#}

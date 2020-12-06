@@ -1,7 +1,7 @@
 package cz.danes.mujgraphql.many2many.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-import cz.danes.mujgraphql.one2one.inputs.CreateCommentM2M;
+import cz.danes.mujgraphql.many2many.inputm2m.CreateCommentM2M;
 import cz.danes.mujgraphql.many2many.model.CommentMany;
 import cz.danes.mujgraphql.many2many.repo.CommentManyRepo;
 import lombok.AllArgsConstructor;

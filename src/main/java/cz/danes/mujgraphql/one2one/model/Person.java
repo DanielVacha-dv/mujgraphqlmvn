@@ -16,7 +16,7 @@ public class Person  implements Serializable {
     private String lastName;
     private int age;
 
-    @OneToOne(mappedBy = "person")
+    @OneToOne(mappedBy = "person",cascade=CascadeType.ALL)
     private PersonInfo personInfo;
 
 
