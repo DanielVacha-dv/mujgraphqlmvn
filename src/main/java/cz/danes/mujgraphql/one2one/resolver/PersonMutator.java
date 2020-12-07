@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import cz.danes.mujgraphql.exception.InvalidArgumentException;
 import cz.danes.mujgraphql.exception.PersonNotFoundException;
+import cz.danes.mujgraphql.one2one.inputs.CreatePersonInfoInput;
 import cz.danes.mujgraphql.one2one.inputs.CreatePersonInput;
 import cz.danes.mujgraphql.one2one.inputs.UpdateAgeInput;
 import cz.danes.mujgraphql.one2one.inputs.UpdateNameInput;
@@ -63,6 +64,24 @@ public class PersonMutator implements GraphQLMutationResolver {
         p.setMiddleName(i.getLastName());
 
         return repo.save(p);
+    }
+
+    public Person makePPInfo(CreatePersonInput i,
+                                       CreatePersonInfoInput cpp) {
+        Person p = new Person();
+        p.setFirstName(i.getFirstName());
+        p.setMiddleName(i.getMiddleName());
+        p.setLastName(i.getLastName());
+        PersonInfo pi=new PersonInfo();
+        pi.setSuma(cpp.getSuma());
+        pi.setNationallity(cpp.getNationallity());
+        pi.setPersonInfo(cpp.getPersonInfoS());
+        p.setPersonInfo(pi);
+        pi.setPerson(p);
+
+        Person save = repo.save(p);
+        repPI.save(pi);
+        return  save;
     }
 
     public Person updateAge(UpdateAgeInput i) {

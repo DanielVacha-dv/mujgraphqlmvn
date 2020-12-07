@@ -75,3 +75,24 @@ input UpdateAgeInput{
 #        }
 #    }
 #}
+
+#
+#mutation makePPInfo($input1: CreatePersonInput!,$input2: CreatePersonInfoInput!) {
+#    makePPInfo(input1: $input1,input2: $input2) {
+#        firstName
+#    }
+#}
+#
+#{
+#"input1": {
+#"firstName": "Tim",
+#"middleName": "Alfred",
+#"lastName": "Adams"
+#},
+#
+#"input2": {
+#"personInfoS": "personalne tajne",
+#"suma": 3 ,
+#"nationallity": "CZ"
+#}
+#}
