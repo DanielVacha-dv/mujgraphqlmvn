@@ -19,14 +19,12 @@ input CreatePersonInput {
     firstName: String!
     middleName: String
     lastName: String!
-#    personInfo:CreatePersonInfoInput
 }
 
 input   CreatePersonInfoInput {
         personInfoS:String!
         suma : Int
         nationallity : String
-#    person: CreatePersonInput
 }
 
 input UpdateNameInput{

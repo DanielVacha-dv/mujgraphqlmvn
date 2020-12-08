@@ -12,5 +12,4 @@ public class CreatePersonInfoInput {
     private String personInfoS;
     private String nationallity;
     private int suma;
-//    private Person person;
 }

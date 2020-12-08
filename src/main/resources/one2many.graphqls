@@ -14,10 +14,10 @@ input CreatePostInput {
     title: String!
 }
 
-#input CreatePostCommentInput {
-#    title: String!
-#    review: String!
-#}
+input CreatePostCommentInput {
+    review: String!
+}
+
 #mutation makePost($input: CreatePostInput!) {
 #    makePost(input: $input) {
 #        title
