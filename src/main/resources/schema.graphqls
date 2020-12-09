@@ -35,7 +35,7 @@ type Mutation {
 #   M2M
     makeCommentM2M(input: CreateCommentM2M!) : CommentMany!
 #    O2M
-    makePostO2M(input: CreatePostInput!,input2: CreatePostCommentInput!) : Post!
+    makePostO2M(input1: CreatePostInput!,input2: CreatePostCommentInput!) : Post!
 #    makePostComment(input: CreatePostCommentInput!) : Post!
 }
 

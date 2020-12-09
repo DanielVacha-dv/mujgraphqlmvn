@@ -28,12 +28,14 @@ public class PostQuerryMutator implements GraphQLMutationResolver {
 
     public Post makePostO2M(CreatePostInput ci,CreatePostPostCommentInput c) {
         Post p = new Post();
-//        PostComment pc=new PostComment();
-//        List<PostComment> alPC=new ArrayList<>();
-//        alPC.add(pc);
-//        p.setTitle(c.getTitle());
-//        p.setComments(alPC);
+        p.setTitle(ci.getTitle());
+        PostComment pc=new PostComment();
+        List<PostComment> alPC=new ArrayList<>();
+        pc.setReview(c.getReview());
+        alPC.add(pc);
+        p.setComments(alPC);
 //        repopc.save(pc);
-        return repo.save(p);
+        Post save = repo.save(p);
+        return save;
     }
 }

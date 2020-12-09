@@ -18,6 +18,23 @@ input CreatePostCommentInput {
     review: String!
 }
 
+#mutation makePostO2M($input1: CreatePostInput!,$input2: CreatePostCommentInput!) {
+#    makePostO2M(input1: $input1,input2: $input2) {
+#        title
+#    }
+#}
+#{
+#"input1": {
+#"title" : "Tim"
+#} ,
+#
+#"input2": {
+#"review": "revjucko"
+#}
+#}
+
+
+
 #mutation makePost($input: CreatePostInput!) {
 #    makePost(input: $input) {
 #        title

@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreatePostPostCommentInput {
-    private String title;
+//    private String title;
     private String review;
 }
