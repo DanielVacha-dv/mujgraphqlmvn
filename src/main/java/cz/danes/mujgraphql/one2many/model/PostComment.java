@@ -17,8 +17,9 @@ public class PostComment  implements Serializable {
 
     private String review;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)//,fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_id", nullable = false)
+//    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)//,fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,optional=false)
+    @JoinColumn(name = "post_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Post post;
 

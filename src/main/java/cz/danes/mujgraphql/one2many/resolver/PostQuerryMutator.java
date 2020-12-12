@@ -30,12 +30,13 @@ public class PostQuerryMutator implements GraphQLMutationResolver {
         Post p = new Post();
         p.setTitle(ci.getTitle());
         PostComment pc=new PostComment();
+        pc.setPost(p);
         List<PostComment> alPC=new ArrayList<>();
         pc.setReview(c.getReview());
         alPC.add(pc);
         p.setComments(alPC);
-//        repopc.save(pc);
         Post save = repo.save(p);
+        repopc.save(pc);
         return save;
     }
 }

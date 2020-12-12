@@ -20,7 +20,11 @@ input CreatePostCommentInput {
 
 #mutation makePostO2M($input1: CreatePostInput!,$input2: CreatePostCommentInput!) {
 #    makePostO2M(input1: $input1,input2: $input2) {
-#        title
+#        title ,
+#        comments {
+#            id,
+#            review
+#        }
 #    }
 #}
 #{
