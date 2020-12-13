@@ -21,9 +21,40 @@ type  Tag {
 
 
 
-input CreateCommentM2M {
-    title: String!
+input CreateTagM2MInput {
+    name: String!
 }
+input CreateCommentM2MInput {
+    title : String !
+}
+
+
+#mutation  createCommentTagM2M(input1: CreateCommentM2MInput!,input2: CreateTagM2MInput!)  {
+#createCommentTagM2M(input1:$input1,input2:$input2) {
+#    title
+#    }
+#}
+
+#{
+#"input1": {
+#"title" : "Tim"
+#} ,
+#
+#"input2": {
+#"name": "revjucko"
+#}
+#}
+
+
+#mutation makePostPostComment($input1: CreatePostPostCommentInput!) {
+#makePostPostComment(input: $input1) {
+#    title
+#    review
+#        }
+#    }
+#}
+
+
 
 #{ allCommentMany {
 #    id,

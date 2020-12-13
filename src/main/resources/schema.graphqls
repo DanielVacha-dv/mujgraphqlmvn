@@ -33,7 +33,8 @@ type Mutation {
     updateName(input: UpdateNameInput!) : Person!
     updateAge(input: UpdateAgeInput!) : Person!
 #   M2M
-    makeCommentM2M(input: CreateCommentM2M!) : CommentMany!
+    makeCommentM2M(input: CreateCommentM2MInput!) : CommentMany!
+    createCommentTagM2M(input1: CreateCommentM2MInput!,input2: CreateTagM2MInput) : CommentMany!
 #    O2M
     makePostO2M(input1: CreatePostInput!,input2: CreatePostCommentInput!) : Post!
 #    makePostComment(input: CreatePostCommentInput!) : Post!

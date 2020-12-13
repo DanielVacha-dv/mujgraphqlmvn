@@ -1,5 +1,4 @@
 package cz.danes.mujgraphql.many2many.inputm2m;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +6,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateCommentInput {
+public class CreateCommentM2MInput {
     private String title;
 }
