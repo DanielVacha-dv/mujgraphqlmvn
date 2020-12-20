@@ -11,13 +11,14 @@ import java.util.Objects;
 @Table(name = "tag")
 public class Tag {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NaturalId
     private String name;
 
-    @ManyToMany(mappedBy = "tags",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "tags",cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
     private List<CommentMany> posts = new ArrayList<>();
 
     public Tag() {}

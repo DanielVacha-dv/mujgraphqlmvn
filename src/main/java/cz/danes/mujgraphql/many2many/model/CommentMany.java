@@ -9,7 +9,7 @@ import java.util.List;
 public class CommentMany {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -45,8 +45,7 @@ public class CommentMany {
     }
 
     @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
+            CascadeType.ALL
 
     },  fetch = FetchType.EAGER)
     @JoinTable(name = "comment_tag",

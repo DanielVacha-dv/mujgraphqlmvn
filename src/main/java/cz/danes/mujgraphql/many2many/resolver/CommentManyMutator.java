@@ -36,8 +36,10 @@ public class CommentManyMutator implements GraphQLMutationResolver {
         com.setTitle(cz.getTitle());
         commentManyList.add(com);
         t.setName(tg.getName());
+        t.setPosts(commentManyList);
         tagList.add(t);
         com.setTags(tagList);
+        repoTG.save(t);
         return repo.save(com);
     }
 }
